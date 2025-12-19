@@ -1,0 +1,77 @@
+<!-- =========================
+     index.html
+     ========================= -->
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beveiligde pagina</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .login-box {
+      background: rgba(0,0,0,0.4);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      text-align: center;
+      max-width: 320px;
+      width: 100%;
+    }
+    input {
+      width: 100%;
+      padding: 0.7rem;
+      margin-top: 1rem;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+    }
+    button {
+      margin-top: 1rem;
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 6px;
+      border: none;
+      background: #e63946;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .error {
+      color: #ffb3b3;
+      margin-top: 0.8rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>🎄 Welkom</h2>
+    <p>Voer het wachtwoord in om verder te gaan</p>
+    <input type="password" id="password" placeholder="Wachtwoord" />
+    <button onclick="checkPassword()">Ga verder</button>
+    <div class="error" id="error">❌ Onjuist wachtwoord</div>
+  </div>
+
+  <script>
+    const CORRECT_PASSWORD = "kerst2025"; // pas dit aan
+
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      if (input === CORRECT_PASSWORD) {
+        window.location.href = "kaart.html";
+      } else {
+        document.getElementById("error").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
